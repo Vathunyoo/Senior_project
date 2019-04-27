@@ -1,0 +1,12 @@
+
+[91m   ______               __
+  / ____/     _________/ /___ _
+ / /     __  / ___/ __  / __ `/         [94mComputers are useless. They can only
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mgive you answers.  -- Picasso
+[91m\____/     /_/   \__,_/\__,_/[m
+
+[99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
+
+[m
+Logs can be found in                    : /Users/vathunyoo/Desktop/All_work/Senior_project/Senior_project/kotlin-source/build/nodes/Notary/logs
+Database connection url is              : jdbc:h2:tcp://10.37.129.2:58903/node
