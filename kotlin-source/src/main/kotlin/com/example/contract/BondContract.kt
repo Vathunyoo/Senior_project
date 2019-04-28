@@ -76,7 +76,7 @@ class BondContract : Contract {
         //--------------------------------
         // Verify signer
         //--------------------------------
-        val command = tx.commands.requireSingleCommand<Commands.Issue>()
+        val command = tx.commands.requireSingleCommand<Commands.Update>()
         "All of the participants (Output) must be signers." using (command.signers.containsAll(bondOut.participants.map { it.owningKey }))
         "All of the participants (Input) must be signers." using (command.signers.containsAll(bondIn.participants.map { it.owningKey }))
 
@@ -97,7 +97,7 @@ class BondContract : Contract {
         //--------------------------------
         // Verify signer
         //--------------------------------
-        val command = tx.commands.requireSingleCommand<Commands.Issue>()
+        val command = tx.commands.requireSingleCommand<Commands.Redeem>()
         "All of the participants (Input) must be signers." using (command.signers.containsAll(bondIn.participants.map { it.owningKey }))
 
         //--------------------------------

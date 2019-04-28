@@ -1,11 +1,10 @@
 package com.example.flow
 
 import com.example.state.BondState
-import com.example.state.IOUState
+import net.corda.core.contracts.ContractState
 import net.corda.core.contracts.LinearState
-import net.corda.core.contracts.TransactionVerificationException
-import net.corda.core.identity.CordaX500Name
 import net.corda.core.node.services.queryBy
+import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.utilities.getOrThrow
 import net.corda.testing.core.singleIdentity
 import net.corda.testing.node.MockNetwork
@@ -13,9 +12,7 @@ import net.corda.testing.node.StartedMockNode
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import java.lang.reflect.Array
 import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
 
 class BondFlowTests {
     lateinit var network: MockNetwork
@@ -49,7 +46,7 @@ class BondFlowTests {
         b = network.createPartyNode()
         c = network.createPartyNode()
         // For real nodes this happens automatically, but we have to manually register the flow for tests.
-        listOf(a, b, c).forEach { it.registerInitiatedFlow(BondFlow.Acceptor::class.java) }
+        listOf(a, b, c).forEach { it.registerInitiatedFlow(BondFlow_Issue.Acceptor::class.java) }
         network.runNetwork()
     }
     @After
@@ -142,12 +139,12 @@ class BondFlowTests {
 //    }
 
     @Test
-    fun `Bond test`() {
+    fun `Bond Create test`() {
 
         println("// ---------------------------------------")
         println("// Initial flow")
         println("// ---------------------------------------")
-        val flow = BondFlow.Initiator(1, b.info.singleIdentity())
+        val flow = BondFlow_Issue.Initiator(1, b.info.singleIdentity())
         val future = a.startFlow(flow)
         network.runNetwork()
         println("// Node info")
@@ -175,6 +172,10 @@ class BondFlowTests {
         println("// ---------------------------------------")
         val signedTx = future.getOrThrow()
         signedTx.verifySignaturesExcept(a.info.singleIdentity().owningKey,b.info.singleIdentity().owningKey)
+        println("// list of state ref")
+        val check = signedTx.tx.outputs[0]
+        val keep = check
+        println(check.data)
         for (node in listOf(a, b)) {
             assertEquals(signedTx, node.services.validatedTransactions.getTransaction(signedTx.id))
         }
@@ -187,10 +188,12 @@ class BondFlowTests {
         println("// Value in output state")
         println("// ---------------------------------------")
 
-        val myStates = b.services.vaultService.queryBy<BondState>().states
+        val myStates = a.services.vaultService.queryBy<LinearState>()
         println("// Vault query")
         println(myStates)
 
+//        val queryCriteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(campaignReference))
+//        val campaignInputStateAndRef = serviceHub.vaultService.queryBy<Campaign>(queryCriteria).states.single()
     }
 
 }
