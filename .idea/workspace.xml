@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a681a7-b955-45c4-81a9-339d04fede91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/libs/cordapp-example-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/libs/cordapp-example-0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/Notary/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/Notary/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
@@ -51,31 +57,35 @@
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/PartyC/network-parameters" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/PartyC/network-parameters" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/PartyC/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/PartyC/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/PartyC/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/PartyC/persistence.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-source/build/tmp/generated-test-cordapps/com.example.contract-2d1041e8-00ba-4812-868a-d414ebb1940e.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-source/build/tmp/generated-test-cordapps/com.example.contract-4b33c340-f0ad-4484-9e65-5934be8ead47.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-source/build/tmp/generated-test-cordapps/com.example.contract-b864792a-91f8-494d-a6fd-40aa2110dd48.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-source/build/tmp/generated-test-cordapps/com.example.contract-fd85fd73-689c-439c-a3b2-4457f7b9e853.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-source/build/tmp/generated-test-cordapps/com.example.schema-b38706fb-d07e-420f-8f82-209505a4767e.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-source/build/tmp/generated-test-cordapps/com.example.schema-d25ef6e4-b22b-4cf6-abc5-c042edbc2dec.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Acceptor$call$signTransactionFlow$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Acceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator$Companion$FINALISING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator$Companion$GATHERING_SIGS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator$Companion$GENERATING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator$Companion$SIGNING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow$Initiator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/plugin/ExamplePlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/plugin/ExamplePlugin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/plugin/ExamplePluginKt$sam$Function$c519ed3f.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Acceptor$call$signTransactionFlow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Acceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$FINALISING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$FINALISING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$GATHERING_SIGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$GATHERING_SIGS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$GENERATING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$GENERATING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$SIGNING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$SIGNING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion$VERIFYING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_recieve$call$signTransactionFlow$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_recieve.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update$Companion$FINALISING_TRANSACTION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update$Companion$GATHERING_SIGS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update$Companion$GENERATING_TRANSACTION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update$Companion$SIGNING_TRANSACTION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Flow_update.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/libs/cordapp-example-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/libs/cordapp-example-0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/sslkeystore.jks" afterDir="false" />
@@ -90,6 +100,11 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/server.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/sslkeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/cordapps/cordapp-example-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/cordapps/cordapp-example-0.1.jar" afterDir="false" />
@@ -99,14 +114,20 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/network-parameters" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/network-parameters" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/persistence.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/process-id" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/process-id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/sslkeystore.jks" afterDir="false" />
@@ -123,8 +144,14 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/additional-node-infos/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/artemis/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/brokers/rpc/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/certificates/sslkeystore.jks" afterDir="false" />
@@ -136,99 +163,8 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/persistence.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/process-id" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyC/process-id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-042a4e21-6a69-465f-8f5d-88ad70b07780.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-04554c43-68e7-4c1d-840b-dd2671933141.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-065bdca1-b525-44f3-a27b-60e600a6d620.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-07a191db-bca7-40bf-b080-516f976ee917.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-08f8c41a-d7c8-4619-acd6-758a8d79a9cf.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-0913c7a4-4d73-4966-b4ac-7bcbd927eb02.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-09349a9f-5f84-43fc-9748-1e3dbf5032ec.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-09d6bcbf-08fd-4b03-8b2d-e85e893246cb.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-09f4fc71-7d50-44c8-8b02-32f30dce70ab.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-0e1ec2e2-d224-4446-97b4-034930333ce6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-142dd85c-30b1-4da3-83c7-2a1e4bc53c89.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-15443678-8f18-4905-bdc6-8efee8f4a736.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-1c940f92-9386-473e-b039-5c3235e64945.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-2cd1f421-200a-43f7-932e-eae587873be4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-2d9442af-984f-4d11-a52c-4265991c161d.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-2fa3d2a0-b5e9-4fb3-9cb8-3738b77f103d.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-3603c071-b196-4bfd-83c5-a0c59a29b480.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-3abbc010-c9d7-404b-91c1-331dc0d8877a.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-3b5d9bac-ba40-49cc-a71e-aed76727459f.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-3bfdc0dd-8c0d-4216-9377-32428ac0bc71.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-40576896-a25a-4852-b7f5-40387962a185.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-42a294ba-7c73-4ce7-a74b-dba6ed934884.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-4cf1a940-a02e-44f8-9a45-57d98d658824.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-5545dbf2-4124-4a9c-8c90-7cdb64aab8ef.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-56137a5c-c71c-415b-95b0-23bd80e5fddb.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-56de139d-fa06-42ec-8e36-48d17b6748b3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-6472581f-e8b3-4c16-a4ea-99210a6e8150.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-7733fe20-f19f-4c84-9ea4-71ca969bf99d.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-7e0057c7-0f71-4a00-bd61-fc91c575257a.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-87e86a72-3562-4ab5-b086-c09c93317ba5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-8b1ea1e6-2c5c-4158-b503-57d33013bd7f.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-8d9bc634-6359-4336-8b63-a241c98854d1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-8eba51d6-fae7-4485-994b-ff9e178e3612.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-8efb9966-9c08-4ee5-afe7-837747799e07.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-8f662b0a-46ef-434c-af60-698e88db9bad.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-972636b9-e5e4-4c60-9e3a-11e694de4442.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-97ea5c23-af04-4133-bd63-4e6a6527c33e.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-9e9f897f-d3b3-4565-968f-2898d33d95b5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-9fb27080-4f5f-403b-8a8c-fa77b7d17897.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-a2a8b267-157e-40e1-abed-0976e137172a.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-a2c9e78e-0fd8-4a60-8d49-3e2bd4bbec61.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-a4985372-dc35-4c7a-a946-72e64dd4915e.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-b3342235-e82c-41e5-a396-3e7c66309227.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-b3c476ad-d1c7-4b6d-838c-e08ad64d3d86.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-b95eb298-711e-4902-b5f5-e0b44fcf6836.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-c2ddda6c-0612-4a9a-aa6a-e42ccc42a6fc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-ce2dd4cf-972a-4ad3-ab4c-2bcbd507e2c5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-d100bf1d-2051-4d0a-a90e-33dc9b2571ac.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-e0cbb32f-beea-44fa-8881-9c4c6b2ad9f3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-e3170f2e-c55c-40c7-805e-eb8c4e070867.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-e41ac925-c223-4de2-bee5-d08bf89bae37.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-ecb564f1-83fb-4b4c-9176-9c862e3cd417.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-ee4dc8cd-1340-4c5e-b2ba-85db64d79c32.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-ee9ea038-e6a9-4ba5-8498-7748d0a81ae2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-fc7f0efd-6808-47a3-a6ca-5d118e287963.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.contract-feaa0177-56be-4c3c-89d1-be7fb93dae10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-1604b8dc-38b3-4425-9a49-36ba87b7b0b7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-21409e83-2237-4508-a282-285be80d4963.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-2b76ecec-e529-4154-a2da-7567d2f5eabe.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-3f419395-afc4-4b8e-ab61-4e9a9cba5c0b.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-49345ee9-7d32-42f2-8933-8b127a9c1b54.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-57490f91-ce86-48f4-af80-67d5eaacecd7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-6af5d003-19e8-4072-bb7f-c4c16951530f.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-6e25f622-100f-43eb-b2ad-d77d55a3f541.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-8bcfbeaa-7436-451d-8a0f-a9a6c976bd05.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-8cdd4d1f-361d-4c2b-9e18-a69e574d9388.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-ac3fe182-2461-4bc7-b0f2-fafe5e444c71.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-b7d6357f-9872-494c-8c9d-9d22de4ec70f.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-b9b251c2-b9e3-4b8b-93cd-3cd9e9da28ea.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-bbff5451-cd8f-469f-97ef-572536a562d1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-bddf8eba-b35f-4c3d-9fa5-88739a147f10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-d26b8b67-e7c4-47d2-912c-fab9faaa5c86.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-d4595741-f92b-458d-83a6-e8553cf87448.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-d479731c-462d-4828-8aa2-861a102aa3ef.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-e0ec7fc0-2425-491b-9045-c923de5cd659.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-e7e47d21-5a22-4c33-9334-351e5d979701.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-f2a70471-58b3-41de-a25d-7484054ef15b.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/tmp/generated-test-cordapps/com.example.schema-faed424c-59fd-4696-bb3a-1803fdd88d70.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/logs/node-Vathunyoos-MacBook-Pro.local.log" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/logs/node-Vathunyoos-MacBook-Pro.local.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Acceptor$call$signTransactionFlow$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Acceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator$Companion$FINALISING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator$Companion$GATHERING_SIGS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator$Companion$GENERATING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator$Companion$SIGNING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow$Initiator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/BondFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/BondFlowTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/BondFlowTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/flow/BondFlowTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/flow/BondFlowTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -261,40 +197,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-              <folding>
-                <element signature="e#26#548#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="51" column="71" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/flow/BondFlowTests.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="195" column="113" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="195" selection-end-column="113" />
+            <state relative-caret-position="390">
+              <caret line="121" column="26" lean-forward="true" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="39" />
+            <state relative-caret-position="1022">
+              <caret line="112" column="47" lean-forward="true" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="84" column="19" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+              <folding>
+                <element signature="e#26#749#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -302,7 +238,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
+            <state relative-caret-position="1200">
               <caret line="80" column="103" lean-forward="true" selection-start-line="80" selection-start-column="103" selection-end-line="80" selection-end-column="103" />
               <folding>
                 <element signature="e#30#233#0" expanded="true" />
@@ -327,14 +263,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kotlin-source/build.gradle" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/flow/BondFlowCreateTests.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Create.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/CashState.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/flow/BondFlowTests.kt" />
-        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt" />
+        <option value="$PROJECT_DIR$/kotlin-source/build.gradle" />
+        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" />
+        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" />
+        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt" />
       </list>
     </option>
   </component>
@@ -541,7 +479,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556450274511" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556502582507" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -837,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BondState.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/flow/BondFlowTests.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -851,26 +782,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="51" column="71" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
-          <folding>
-            <element signature="e#26#548#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
+        <state relative-caret-position="1200">
           <caret line="80" column="103" lean-forward="true" selection-start-line="80" selection-start-column="103" selection-end-line="80" selection-end-column="103" />
           <folding>
             <element signature="e#30#233#0" expanded="true" />
@@ -878,10 +792,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BondState.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+          <folding>
+            <element signature="e#26#749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="39" />
+        <state relative-caret-position="390">
+          <caret line="121" column="26" lean-forward="true" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1022">
+          <caret line="112" column="47" lean-forward="true" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
         </state>
       </provider>
     </entry>

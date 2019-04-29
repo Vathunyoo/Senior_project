@@ -17,13 +17,13 @@ import net.corda.core.utilities.ProgressTracker
 object BondFlow_Update {
     @InitiatingFlow
     @StartableByRPC
-    class Flow_update(val amount: Int,
+    class Initiator(val amount: Int,
                     val lender: Party,
                     val bondref: UniqueIdentifier) : FlowLogic<SignedTransaction>() {
 
         companion object {
-            object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction based on new IOU.")
-            object VERIFYING_TRANSACTION : ProgressTracker.Step("Verifying contract constraints. V3")
+            object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction for Update bond state.")
+            object VERIFYING_TRANSACTION : ProgressTracker.Step("Verifying contract constraints.")
             object SIGNING_TRANSACTION : ProgressTracker.Step("Signing transaction with our private key.")
             object GATHERING_SIGS : ProgressTracker.Step("Gathering the counterparty's signature.") {
                 override fun childProgressTracker() = CollectSignaturesFlow.tracker()
@@ -55,14 +55,8 @@ object BondFlow_Update {
             progressTracker.currentStep = GENERATING_TRANSACTION
             val newamount = amount
             val bondOutputState = bondState.copy(amount = newamount)
-//            val bondState = BondState(amount, serviceHub.myInfo.legalIdentities.first(), lender, bondref)
             val bondOutputStateAndContract = StateAndContract(bondOutputState, BondContract.Bond_CONTRACT_ID)
-//            val txCommand = Command(BondContract.Commands.Update(), bondState.participants.map { it.owningKey })
             val txCommand = Command(BondContract.Commands.Update(), listOf(bondState.owner.owningKey,bondState.lender.owningKey))
-//            val txBuilder = TransactionBuilder(notary)
-//                    .addInputState(bondInputStateAndRef)
-//                    .addOutputState(bondState, BondContract.Bond_CONTRACT_ID)
-//                    .addCommand(txCommand)
 
             val txBuilder = TransactionBuilder(notary).withItems(
                     bondOutputStateAndContract,
@@ -87,8 +81,8 @@ object BondFlow_Update {
         }
     }
 
-    @InitiatedBy(Flow_update::class)
-    class Flow_recieve(val otherPartyFlow: FlowSession) : FlowLogic<SignedTransaction>() {
+    @InitiatedBy(Initiator::class)
+    class Responder(val otherPartyFlow: FlowSession) : FlowLogic<SignedTransaction>() {
 
         @Suspendable
         override fun call(): SignedTransaction {

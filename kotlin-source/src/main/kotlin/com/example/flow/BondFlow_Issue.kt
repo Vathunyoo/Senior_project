@@ -7,6 +7,7 @@ import com.example.state.BondState
 import com.example.state.IOUState
 import net.corda.core.contracts.Command
 import net.corda.core.contracts.Requirements.using
+import net.corda.core.contracts.StateAndContract
 import net.corda.core.contracts.requireThat
 import net.corda.core.flows.*
 import net.corda.core.identity.Party
@@ -23,7 +24,7 @@ object BondFlow_Issue {
                     val lender: Party) : FlowLogic<SignedTransaction>() {
 
         companion object {
-            object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction based on new IOU.")
+            object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction for Issue bond state.")
             object VERIFYING_TRANSACTION : ProgressTracker.Step("Verifying contract constraints.")
             object SIGNING_TRANSACTION : ProgressTracker.Step("Signing transaction with our private key.")
             object GATHERING_SIGS : ProgressTracker.Step("Gathering the counterparty's signature.") {
@@ -55,21 +56,23 @@ object BondFlow_Issue {
             progressTracker.currentStep = GENERATING_TRANSACTION
             // Generate an unsigned transaction.
             val bondState = BondState(amount, serviceHub.myInfo.legalIdentities.first(), lender)
+            val bondOutputStateAndContract = StateAndContract(bondState, BondContract.Bond_CONTRACT_ID)
             // map (iterate every member in array) output on map is array of public key
             val txCommand = Command(BondContract.Commands.Issue(), bondState.participants.map { it.owningKey })
-            // have input state or timewindow (in transaction builder must have notary)
-            val txBuilder = TransactionBuilder(notary)
-                    .addOutputState(bondState, BondContract.Bond_CONTRACT_ID)
-                    .addCommand(txCommand)
+            // in transaction builder must have notary
+            val txBuilder = TransactionBuilder(notary).withItems(
+                    bondOutputStateAndContract,
+                    txCommand
+            )
 
             // Stage 2.
             progressTracker.currentStep = VERIFYING_TRANSACTION
-            // Verify that the transaction is valid.
+            // Verify that the transaction is valid. (verify by contract in com.example.contract.BondContract)
             txBuilder.verify(serviceHub)
 
             // Stage 3.
             progressTracker.currentStep = SIGNING_TRANSACTION
-            // Sign the transaction.
+            // Sign the transaction. (Sign by myself before send it to participant)
             val partSignedTx = serviceHub.signInitialTransaction(txBuilder)
 
             // Stage 4.
@@ -95,7 +98,7 @@ object BondFlow_Issue {
     }
 
     @InitiatedBy(Initiator::class) //respond massage from another flow take class responding as a parameter
-    class Acceptor(val otherPartyFlow: FlowSession) : FlowLogic<SignedTransaction>() {
+    class Responder(val otherPartyFlow: FlowSession) : FlowLogic<SignedTransaction>() {
         @Suspendable
         override fun call(): SignedTransaction {
             val signTransactionFlow = object : SignTransactionFlow(otherPartyFlow) {
