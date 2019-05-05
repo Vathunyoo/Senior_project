@@ -1,7 +1,9 @@
 package com.example.schema
 
+import net.corda.core.contracts.Amount
 import net.corda.core.schemas.MappedSchema
 import net.corda.core.schemas.PersistentState
+import net.corda.finance.USD
 import java.time.Instant
 import java.util.*
 import javax.persistence.Column
@@ -27,7 +29,10 @@ object BondSchemaV1 : MappedSchema(
             var lenderName: String,
 
             @Column(name = "amount")
-            var amount: Int,
+            var amount: Long,
+
+            @Column(name = "currency")
+            var currency: String,
 
 //            @Column(name = "date")
 //            var date: Instant,
@@ -37,7 +42,7 @@ object BondSchemaV1 : MappedSchema(
     ) : PersistentState() {
         // Default constructor required by hibernate.
 //        constructor(): this("", "", "",0, Instant.now(),UUID.randomUUID())
-        constructor(): this("", "",0,UUID.randomUUID())
+        constructor(): this("", "",0,"THB",UUID.randomUUID())
     }
 }
 

@@ -57,7 +57,7 @@ class BondContract : Contract {
         // Verify logic
         //--------------------------------
         // Assert stuff over the state.
-        "A newly issued bond must have a positive target." using (bondOut.amount > 0)
+//        "A newly issued bond must have a positive target." using (bondOut.amount > 0)
 
     }
 

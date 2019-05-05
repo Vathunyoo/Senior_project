@@ -5,6 +5,7 @@ import com.example.contract.BondContract
 import com.example.contract.IOUContract
 import com.example.state.BondState
 import com.example.state.IOUState
+import net.corda.core.contracts.Amount
 import net.corda.core.contracts.Command
 import net.corda.core.contracts.Requirements.using
 import net.corda.core.contracts.StateAndContract
@@ -15,12 +16,13 @@ import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
 import java.time.Instant
+import java.util.*
 
 object BondFlow_Issue {
     @InitiatingFlow // initiate other flow
     @StartableByRPC // Start flow by RPC
     // Every flow is sub class of flow logic
-    class Initiator(val amount: Int,
+    class Initiator(val amount: Amount<Currency>,
                     val lender: Party) : FlowLogic<SignedTransaction>() {
 
         companion object {
@@ -106,7 +108,8 @@ object BondFlow_Issue {
                     val output = stx.tx.outputs.single().data
 //                    "This must be an IOU transaction." using (output is IOUState)
                     val iou = output as BondState
-                    "I won't accept IOUs with a value over 100." using (iou.amount <= 100)
+//                    "I won't accept IOUs with a value over 100." using (iou.amount <= 100)
+//                    "Only Party A can issue flow" using (iou.owner.name.organisation == "PartyA")
                 }
             }
 

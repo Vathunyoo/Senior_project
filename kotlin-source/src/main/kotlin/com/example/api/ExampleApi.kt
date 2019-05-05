@@ -1,7 +1,10 @@
 package com.example.api
 
+import com.example.flow.BondFlow_Issue
+import com.example.flow.ExampleFlow
 import com.example.flow.ExampleFlow.Initiator
 import com.example.schema.IOUSchemaV1
+import com.example.state.BondState
 import com.example.state.IOUState
 import net.corda.core.identity.CordaX500Name
 import net.corda.core.messaging.CordaRPCOps
@@ -62,6 +65,11 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
     @Produces(MediaType.APPLICATION_JSON)
     fun getIOUs() = rpcOps.vaultQueryBy<IOUState>().states
 
+    @GET
+    @Path("bond")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun getBond() = rpcOps.vaultQueryBy<BondState>().states
+
     /**
      * Initiates a flow to agree an IOU between two parties.
      *
@@ -76,17 +84,17 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
     @PUT
     @Path("create-iou")
     fun createIOU(@QueryParam("iouValue") iouValue: Int, @QueryParam("partyName") partyName: CordaX500Name?): Response {
-        if (iouValue <= 0 ) {
+        if (iouValue <= 0) {
             return Response.status(BAD_REQUEST).entity("Query parameter 'iouValue' must be non-negative.\n").build()
         }
         if (partyName == null) {
             return Response.status(BAD_REQUEST).entity("Query parameter 'partyName' missing or has wrong format.\n").build()
         }
-        val otherParty = rpcOps.wellKnownPartyFromX500Name(partyName) ?:
-                return Response.status(BAD_REQUEST).entity("Party named $partyName cannot be found.\n").build()
+        val otherParty = rpcOps.wellKnownPartyFromX500Name(partyName)
+                ?: return Response.status(BAD_REQUEST).entity("Party named $partyName cannot be found.\n").build()
 
         return try {
-            val signedTx = rpcOps.startTrackedFlow(::Initiator, iouValue, otherParty).returnValue.getOrThrow()
+            val signedTx = rpcOps.startTrackedFlow(ExampleFlow::Initiator, iouValue, otherParty).returnValue.getOrThrow()
             Response.status(CREATED).entity("Transaction id ${signedTx.id} committed to ledger.\n").build()
 
         } catch (ex: Throwable) {
@@ -94,6 +102,29 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
             Response.status(BAD_REQUEST).entity(ex.message!!).build()
         }
     }
+
+//    @PUT
+//    @Path("Issue_bond")
+//    fun issuebond(@QueryParam("amount") iouValue: Int, @QueryParam("partyName") partyName: CordaX500Name?): Response {
+//        if (iouValue <= 100) {
+//            return Response.status(BAD_REQUEST).entity("Query parameter 'iouValue' must be non-negative.\n").build()
+//        }
+//        if (partyName == null) {
+//            return Response.status(BAD_REQUEST).entity("Query parameter 'partyName' missing or has wrong format.\n").build()
+//        }
+//        val otherParty = rpcOps.wellKnownPartyFromX500Name(partyName) ?:
+//        return Response.status(BAD_REQUEST).entity("Party named $partyName cannot be found.\n").build()
+//
+//        return try {
+//            val signedTx = rpcOps.startTrackedFlow(BondFlow_Issue::Initiator, iouValue, otherParty).returnValue.getOrThrow()
+//            Response.status(CREATED).entity("Transaction id ${signedTx.id} committed to ledger.\n").build()
+//
+//        } catch (ex: Throwable) {
+//            logger.error(ex.message, ex)
+//            Response.status(BAD_REQUEST).entity(ex.message!!).build()
+//        }
+//    }
+
 	
 	/**
      * Displays all IOU states that are created by Party.

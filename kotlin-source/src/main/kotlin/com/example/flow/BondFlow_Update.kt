@@ -13,11 +13,12 @@ import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import java.util.*
 
 object BondFlow_Update {
     @InitiatingFlow
     @StartableByRPC
-    class Initiator(val amount: Int,
+    class Initiator(val amount: Amount<Currency>,
                     val lender: Party,
                     val bondref: UniqueIdentifier) : FlowLogic<SignedTransaction>() {
 
@@ -92,7 +93,7 @@ object BondFlow_Update {
                     val output = stx.tx.outputs.single().data
 //                    "This must be an IOU transaction." using (output is IOUState)
                     val iou = output as BondState
-                    "I won't accept IOUs with a value over 100." using (iou.amount <= 100)
+//                    "I won't accept IOUs with a value over 100." using (iou.amount <= 100)
                 }
             }
 

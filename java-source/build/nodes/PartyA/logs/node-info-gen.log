@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mWhenever I go near my bank I get
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mwithdrawal symptoms 😎  
+ / /     __  / ___/ __  / __ `/         [94mThere was an earthquake in California,
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94ma local bank went into de-fault.
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/java-source/build/nodes/PartyA/logs
-Database connection url is              : jdbc:h2:tcp://10.35.246.238:60266/node
+Database connection url is              : jdbc:h2:tcp://192.168.1.59:53219/node

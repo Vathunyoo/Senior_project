@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mA banker with nobody around may find
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mthemselves .... a-loan! <applause>
+ / /     __  / ___/ __  / __ `/         [94mComputers are useless. They can only
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mgive you answers.  -- Picasso
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/kotlin-source/build/nodes/PartyB/logs
-Database connection url is              : jdbc:h2:tcp://10.35.246.238:60277/node
+Database connection url is              : jdbc:h2:tcp://192.168.1.59:53237/node

@@ -1,6 +1,7 @@
 package com.example.state
 
 import com.example.schema.BondSchemaV1
+import net.corda.core.contracts.Amount
 import net.corda.core.contracts.LinearState
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.identity.AbstractParty
@@ -9,8 +10,9 @@ import net.corda.core.schemas.MappedSchema
 import net.corda.core.schemas.PersistentState
 import net.corda.core.schemas.QueryableState
 import java.time.Instant
+import java.util.*
 
-data class BondState (val amount: Int, // Amount bond with lender
+data class BondState (val amount: Amount<Currency>, // Amount bond with lender
                       val owner: Party, // Owner of bond
                       val lender: Party, // Lender of bond
 //                      val financial: Party, // Financial relevant with bond
@@ -28,7 +30,8 @@ data class BondState (val amount: Int, // Amount bond with lender
                     this.owner.name.toString(),
 //                    this.financial.name.toString(),
                     this.lender.name.toString(),
-                    this.amount,
+                    this.amount.quantity,
+                    this.amount.token.toString(),
 //                    this.date,
                     this.linearId.id
             )
