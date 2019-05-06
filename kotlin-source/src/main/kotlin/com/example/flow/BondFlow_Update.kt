@@ -13,13 +13,14 @@ import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import net.corda.core.utilities.unwrap
+import net.corda.finance.flows.CashPaymentFlow
 import java.util.*
 
 object BondFlow_Update {
     @InitiatingFlow
     @StartableByRPC
     class Initiator(val amount: Amount<Currency>,
-                    val lender: Party,
                     val bondref: UniqueIdentifier) : FlowLogic<SignedTransaction>() {
 
         companion object {
@@ -72,8 +73,9 @@ object BondFlow_Update {
             val partSignedTx = serviceHub.signInitialTransaction(txBuilder)
 
             progressTracker.currentStep = GATHERING_SIGS
-            val otherPartyFlow = initiateFlow(lender)
-            subFlow(IdentitySyncFlow.Send(otherSide = otherPartyFlow, tx = partSignedTx.tx))
+            val otherPartyFlow = initiateFlow(bondOutputState.lender)
+            subFlow(CashPaymentFlow(amount,bondOutputState.lender))
+//            subFlow(IdentitySyncFlow.Send(otherSide = otherPartyFlow, tx = partSignedTx.tx))
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(otherPartyFlow), GATHERING_SIGS.childProgressTracker()))
 
 
@@ -87,16 +89,13 @@ object BondFlow_Update {
 
         @Suspendable
         override fun call(): SignedTransaction {
-            subFlow(IdentitySyncFlow.Receive(otherSideSession = otherPartyFlow))
+//            subFlow(IdentitySyncFlow.Receive(otherSideSession = otherPartyFlow))
             val signTransactionFlow = object : SignTransactionFlow(otherPartyFlow) {
                 override fun checkTransaction(stx: SignedTransaction) = requireThat {
                     val output = stx.tx.outputs.single().data
-//                    "This must be an IOU transaction." using (output is IOUState)
                     val iou = output as BondState
-//                    "I won't accept IOUs with a value over 100." using (iou.amount <= 100)
                 }
             }
-
             return subFlow(signTransactionFlow)
         }
     }
