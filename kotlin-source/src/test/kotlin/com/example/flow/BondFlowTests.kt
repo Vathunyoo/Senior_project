@@ -1,13 +1,16 @@
 package com.example.flow
 
 import com.example.state.BondState
+import net.corda.core.contracts.Amount
 import net.corda.core.contracts.ContractState
+import net.corda.core.contracts.FungibleAsset
 import net.corda.core.contracts.LinearState
 import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.utilities.getOrThrow
 import net.corda.finance.USD
 import net.corda.finance.contracts.getCashBalance
+import net.corda.finance.flows.CashIssueFlow
 import net.corda.testing.core.singleIdentity
 import net.corda.testing.node.MockNetwork
 import net.corda.testing.node.StartedMockNode
@@ -63,7 +66,8 @@ class BondFlowTests {
         println("---------------------------------------")
         println(" Initial flow")
         println("---------------------------------------")
-        val flow = BondFlow_Issue.Initiator(1, b.info.singleIdentity())
+        val amount = Amount(100, USD)
+        val flow = BondFlow_Issue.Initiator(amount, b.info.singleIdentity())
         val future = a.startFlow(flow)
         network.runNetwork()
         println("---------------------------------------")
@@ -139,14 +143,17 @@ class BondFlowTests {
         println(signedTx.tx.outputs[0])
 
         println("Cash balance")
-        val cashbalance = a.services.getCashBalance(USD)
-        println(cashbalance)
+//        val cashbalance = a.services.getCashBalance(USD)
+//        println(cashbalance)
+
         println("// ---------------------------------------")
         println("// Value in output state")
         println("// ---------------------------------------")
 
-        val myStates = a.services.vaultService.queryBy<LinearState>()
+        val myStates = a.services.vaultService.queryBy<BondState>().states
+        val test = a.services.vaultService.queryBy<FungibleAsset<*>>()
         println("// Vault query")
+        println(test)
         println(myStates)
         //        println("// ---------------------------------------")
 //        println("// Value in output state")
@@ -164,5 +171,6 @@ class BondFlowTests {
 //        val queryCriteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(campaignReference))
 //        val campaignInputStateAndRef = serviceHub.vaultService.queryBy<Campaign>(queryCriteria).states.single()
     }
+
 
 }

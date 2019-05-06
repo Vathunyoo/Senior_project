@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mWhat you can buy for a dollar these
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mdays is absolute non-cents! 💰  
+ / /     __  / ___/ __  / __ `/         [94mA banker with nobody around may find
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mthemselves .... a-loan! <applause>
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/java-source/build/nodes/PartyC/logs
-Database connection url is              : jdbc:h2:tcp://192.168.1.59:53217/node
+Database connection url is              : jdbc:h2:tcp://192.168.1.59:60957/node

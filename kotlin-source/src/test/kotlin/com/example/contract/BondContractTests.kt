@@ -2,7 +2,9 @@ package com.example.contract
 
 import com.example.state.BondState
 import com.example.contract.BondContract
+import net.corda.core.contracts.Amount
 import net.corda.core.identity.CordaX500Name
+import net.corda.finance.USD
 import net.corda.testing.core.TestIdentity
 import net.corda.testing.node.MockServices
 import net.corda.testing.node.ledger
@@ -16,7 +18,7 @@ class BondContractTests {
     private val lender = TestIdentity(CordaX500Name("MegaCorp", "London", "GB"))
     private val financial = TestIdentity(CordaX500Name("MiniCorp", "New York", "US"))
     private val date = Instant.now()
-    private val amount = 1
+    private val amount = Amount(1, USD)
 
     @Test
     fun `Check all component contract`() {

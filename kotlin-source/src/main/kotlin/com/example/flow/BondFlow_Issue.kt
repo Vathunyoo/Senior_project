@@ -15,6 +15,9 @@ import net.corda.core.identity.Party
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import net.corda.core.utilities.unwrap
+import net.corda.finance.contracts.getCashBalance
+import net.corda.finance.flows.CashPaymentFlow
 import java.time.Instant
 import java.util.*
 
@@ -89,6 +92,8 @@ object BondFlow_Issue {
             not just in the states. If null, the default well known identity of the node is used.
              */
             val otherPartyFlow = initiateFlow(lender)
+            otherPartyFlow.send(serviceHub.myInfo.legalIdentities.first())
+            otherPartyFlow.send(amount)
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(otherPartyFlow), GATHERING_SIGS.childProgressTracker()))
 
             // Stage 5.
@@ -105,14 +110,17 @@ object BondFlow_Issue {
         override fun call(): SignedTransaction {
             val signTransactionFlow = object : SignTransactionFlow(otherPartyFlow) {
                 override fun checkTransaction(stx: SignedTransaction) = requireThat {
+
                     val output = stx.tx.outputs.single().data
-//                    "This must be an IOU transaction." using (output is IOUState)
-                    val iou = output as BondState
-//                    "I won't accept IOUs with a value over 100." using (iou.amount <= 100)
-//                    "Only Party A can issue flow" using (iou.owner.name.organisation == "PartyA")
+                    val bondOut = output as BondState
+                    val lenderCashBalance = serviceHub.getCashBalance(bondOut.amount.token)
+                    "I won't accept this bondstate because I don't have mush money for that" using (bondOut.amount.quantity < lenderCashBalance.quantity)
+
                 }
             }
-
+            val borrower = otherPartyFlow.receive<Party>().unwrap { it }
+            val amount = otherPartyFlow.receive<Amount<Currency>>().unwrap { it }
+            subFlow(CashPaymentFlow(amount,borrower))
             return subFlow(signTransactionFlow)
         }
     }
