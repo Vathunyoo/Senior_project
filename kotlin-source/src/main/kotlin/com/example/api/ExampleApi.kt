@@ -184,10 +184,12 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
                     // We map the anonymous lender and borrower to well-known identities if possible.
                     val possiblyWellKnownLender = rpcOps.wellKnownPartyFromAnonymous(state.lender) ?: state.lender
                     val possiblyWellKnownBorrower = rpcOps.wellKnownPartyFromAnonymous(state.owner) ?: state.owner
+                    val possiblyWellKnownFinancial = rpcOps.wellKnownPartyFromAnonymous(state.financial) ?: state.financial
 
                     BondState(state.amount,
                             possiblyWellKnownBorrower,
                             possiblyWellKnownLender,
+                            possiblyWellKnownFinancial,
                             state.linearId)
                 }
     }

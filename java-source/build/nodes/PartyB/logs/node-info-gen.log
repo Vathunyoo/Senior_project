@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mI had an account with a bank in the
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mNorth Pole, but they froze all my assets 🎅  
+ / /     __  / ___/ __  / __ `/         [94mWhenever I go near my bank I get
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mwithdrawal symptoms 😎  
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/java-source/build/nodes/PartyB/logs
-Database connection url is              : jdbc:h2:tcp://192.168.1.59:65408/node
+Database connection url is              : jdbc:h2:tcp://10.35.249.240:62864/node

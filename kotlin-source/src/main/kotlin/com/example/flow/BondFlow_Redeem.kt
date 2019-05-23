@@ -54,7 +54,7 @@ object BondFlow_Redeem {
             val bondState = bondInputStateAndRef.state.data
 
             progressTracker.currentStep = GENERATING_TRANSACTION
-            val txCommand = Command(BondContract.Commands.Redeem(), listOf(bondState.owner.owningKey,bondState.lender.owningKey))
+            val txCommand = Command(BondContract.Commands.Redeem(), listOf(bondState.owner.owningKey,bondState.lender.owningKey,bondState.financial.owningKey))
             val txBuilder = TransactionBuilder(notary).withItems(
                     bondInputStateAndRef,
                     txCommand
@@ -67,9 +67,9 @@ object BondFlow_Redeem {
             val partSignedTx = serviceHub.signInitialTransaction(txBuilder)
 
             progressTracker.currentStep = GATHERING_SIGS
-            val otherPartyFlow = initiateFlow(bondState.lender)
-            subFlow(IdentitySyncFlow.Send(otherSide = otherPartyFlow, tx = partSignedTx.tx))
-            val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(otherPartyFlow), GATHERING_SIGS.childProgressTracker()))
+            val flowLender = initiateFlow(bondState.lender)
+            val flowFinancial = initiateFlow(bondState.financial)
+            val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowFinancial), GATHERING_SIGS.childProgressTracker()))
 
 
             progressTracker.currentStep = FINALISING_TRANSACTION
@@ -82,7 +82,7 @@ object BondFlow_Redeem {
 
         @Suspendable
         override fun call(): SignedTransaction {
-            subFlow(IdentitySyncFlow.Receive(otherSideSession = otherPartyFlow))
+
             val signTransactionFlow = object : SignTransactionFlow(otherPartyFlow) {
                 override fun checkTransaction(stx: SignedTransaction) = Unit
             }

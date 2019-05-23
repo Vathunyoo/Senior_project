@@ -22,8 +22,8 @@ object BondSchemaV1 : MappedSchema(
             @Column(name = "owner")
             var ownerName: String,
 
-//            @Column(name = "financial")
-//            var financialName: String,
+            @Column(name = "financial")
+            var financialName: String,
 
             @Column(name = "lender")
             var lenderName: String,
@@ -42,7 +42,7 @@ object BondSchemaV1 : MappedSchema(
     ) : PersistentState() {
         // Default constructor required by hibernate.
 //        constructor(): this("", "", "",0, Instant.now(),UUID.randomUUID())
-        constructor(): this("", "",0,"THB",UUID.randomUUID())
+        constructor(): this("", "","",0,"THB",UUID.randomUUID())
     }
 }
 
