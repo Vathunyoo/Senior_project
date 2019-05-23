@@ -190,6 +190,7 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
                             possiblyWellKnownBorrower,
                             possiblyWellKnownLender,
                             possiblyWellKnownFinancial,
+                            state.duedate,
                             state.linearId)
                 }
     }

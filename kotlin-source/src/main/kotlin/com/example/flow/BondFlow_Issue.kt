@@ -17,6 +17,7 @@ import net.corda.core.utilities.unwrap
 import net.corda.finance.contracts.getCashBalance
 import net.corda.finance.flows.CashPaymentFlow
 import java.security.cert.X509Certificate
+import java.time.Instant
 import java.util.*
 
 object BondFlow_Issue {
@@ -25,7 +26,8 @@ object BondFlow_Issue {
     // Every flow is sub class of flow logic
     class Initiator(val amount: Amount<Currency>,
                     val lender: Party,
-                    val financial: Party) : FlowLogic<SignedTransaction>() {
+                    val financial: Party,
+                    val duedate : Instant) : FlowLogic<SignedTransaction>() {
 
         companion object {
             object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction for Issue bond state.")
@@ -59,7 +61,7 @@ object BondFlow_Issue {
             // Stage 1.
             progressTracker.currentStep = GENERATING_TRANSACTION
             // Generate an unsigned transaction.
-            val bondState = BondState(amount, serviceHub.myInfo.legalIdentities.first(), lender, financial)
+            val bondState = BondState(amount, serviceHub.myInfo.legalIdentities.first(), lender, financial,duedate)
             val bondOutputStateAndContract = StateAndContract(bondState, BondContract.Bond_CONTRACT_ID)
             // map (iterate every member in array) output on map is array of public key
             val txCommand = Command(BondContract.Commands.Issue(), bondState.participants.map { it.owningKey })

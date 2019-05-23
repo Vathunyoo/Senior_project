@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mKind of like a regular database but
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mwith emojis, colours and ascii art. 😎  
+ / /     __  / ___/ __  / __ `/         [94mIt runs on the JVM because QuickBasic
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mis apparently not 'professional' enough.
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/kotlin-source/build/nodes/Financial/logs
-Database connection url is              : jdbc:h2:tcp://10.35.249.240:62887/node
+Database connection url is              : jdbc:h2:tcp://10.35.249.240:64706/node

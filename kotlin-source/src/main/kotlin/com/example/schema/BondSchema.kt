@@ -34,15 +34,15 @@ object BondSchemaV1 : MappedSchema(
             @Column(name = "currency")
             var currency: String,
 
-//            @Column(name = "date")
-//            var date: Instant,
+            @Column(name = "date")
+            var date: Instant,
 
             @Column(name = "bond_id")
             var bondId: UUID
     ) : PersistentState() {
         // Default constructor required by hibernate.
 //        constructor(): this("", "", "",0, Instant.now(),UUID.randomUUID())
-        constructor(): this("", "","",0,"THB",UUID.randomUUID())
+        constructor(): this("", "","",0,"THB",Instant.now(),UUID.randomUUID())
     }
 }
 

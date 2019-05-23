@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mComputer science and finance together.
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mYou should see our crazy Christmas parties!
+ / /     __  / ___/ __  / __ `/         [94mIt's not who you know, it's who you know
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mknows what you know you know.
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/java-source/build/nodes/PartyA/logs
-Database connection url is              : jdbc:h2:tcp://10.35.249.240:62865/node
+Database connection url is              : jdbc:h2:tcp://10.35.249.240:64688/node

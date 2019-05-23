@@ -1,9 +1,9 @@
 package com.example.state
 
+import com.example.flow.BondFlow_Redeem
 import com.example.schema.BondSchemaV1
-import net.corda.core.contracts.Amount
-import net.corda.core.contracts.LinearState
-import net.corda.core.contracts.UniqueIdentifier
+import net.corda.core.contracts.*
+import net.corda.core.flows.FlowLogicRefFactory
 import net.corda.core.identity.AbstractParty
 import net.corda.core.identity.Party
 import net.corda.core.schemas.MappedSchema
@@ -16,9 +16,9 @@ data class BondState (val amount: Amount<Currency>, // Amount bond with lender
                       val owner: Party, // Owner of bond
                       val lender: Party, // Lender of bond
                       val financial: Party, // Financial relevant with bond
-//                      val date: Instant, // Date (Create bond)
+                      val duedate: Instant, // Date (Create bond)
                       override val linearId: UniqueIdentifier = UniqueIdentifier()): // Linear id of bond
-        LinearState, QueryableState {
+        LinearState, QueryableState, SchedulableState {
 
     // Override participant to state (Linear state)
     override val participants: List<AbstractParty> get() = listOf(owner, lender, financial)
@@ -32,7 +32,7 @@ data class BondState (val amount: Amount<Currency>, // Amount bond with lender
                     this.lender.name.toString(),
                     this.amount.quantity,
                     this.amount.token.toString(),
-//                    this.date,
+                    this.duedate,
                     this.linearId.id
             )
             else -> throw IllegalArgumentException("Unrecognised schema $schema")
@@ -40,5 +40,9 @@ data class BondState (val amount: Amount<Currency>, // Amount bond with lender
     }
 
     override fun supportedSchemas(): Iterable<MappedSchema> = listOf(BondSchemaV1)
+
+    override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity? {
+        return ScheduledActivity(flowLogicRefFactory.create(BondFlow_Redeem.Initiator::class.java, thisStateRef), duedate)
+    }
 }
 
