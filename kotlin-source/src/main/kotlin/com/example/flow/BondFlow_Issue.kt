@@ -3,6 +3,7 @@ package com.example.flow
 import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BondContract
 import com.example.state.BondState
+import jdk.nashorn.internal.runtime.JSType.toLong
 import net.corda.core.contracts.Amount
 import net.corda.core.contracts.Command
 import net.corda.core.contracts.StateAndContract
@@ -16,7 +17,6 @@ import net.corda.core.utilities.ProgressTracker
 import net.corda.core.utilities.unwrap
 import net.corda.finance.contracts.getCashBalance
 import net.corda.finance.flows.CashPaymentFlow
-import java.security.cert.X509Certificate
 import java.time.Instant
 import java.util.*
 
@@ -26,7 +26,9 @@ object BondFlow_Issue {
     // Every flow is sub class of flow logic
     class Initiator(val amount: Amount<Currency>,
                     val lender: Party,
-                    val financial: Party,
+                    val escrow: Party,
+                    val interest: Double,
+                    val period: Int,
                     val duedate : Instant) : FlowLogic<SignedTransaction>() {
 
         companion object {
@@ -60,8 +62,12 @@ object BondFlow_Issue {
 
             // Stage 1.
             progressTracker.currentStep = GENERATING_TRANSACTION
+            // Add interest
+            val amountInterest = (amount.quantity * interest)/100
+            val newAmountQuatity = toLong(amount.quantity + amountInterest)
+            val newAmount = Amount(newAmountQuatity,amount.token)
             // Generate an unsigned transaction.
-            val bondState = BondState(amount, serviceHub.myInfo.legalIdentities.first(), lender, financial,duedate)
+            val bondState = BondState(newAmount, serviceHub.myInfo.legalIdentities.first(), lender, escrow,interest,period,"pending",duedate)
             val bondOutputStateAndContract = StateAndContract(bondState, BondContract.Bond_CONTRACT_ID)
             // map (iterate every member in array) output on map is array of public key
             val txCommand = Command(BondContract.Commands.Issue(), bondState.participants.map { it.owningKey })
@@ -96,7 +102,7 @@ object BondFlow_Issue {
             val flowLender = initiateFlow(lender)
             flowLender.send(serviceHub.myInfo.legalIdentities.first())
             flowLender.send(ownerCashBalance)
-            val flowFinancial = initiateFlow(financial)
+            val flowFinancial = initiateFlow(escrow)
             flowFinancial.send(serviceHub.myInfo.legalIdentities.first())
             flowFinancial.send(ownerCashBalance)
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowFinancial), GATHERING_SIGS.childProgressTracker()))
@@ -119,27 +125,27 @@ object BondFlow_Issue {
                 override fun checkTransaction(stx: SignedTransaction) = requireThat {
                     val output = stx.tx.outputs.single().data
                     val bondOut = output as BondState
-                    val x500NameFinancial = CordaX500Name.parse("O=Financial,L=Paris,C=FR")
-                    val financial = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameFinancial)
+                    val x500NameEscrow = CordaX500Name.parse("O=Escrow,L=Paris,C=FR")
+                    val escrow = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameEscrow)
                     val x500NamePartyB = CordaX500Name.parse("O=PartyB,L=New York,C=US")
                     val partyB = serviceHub.identityService.wellKnownPartyFromX500Name(x500NamePartyB)
 
-                    "Financial in bond state don't true" using (bondOut.financial == financial)
-                    if(serviceHub.myInfo.isLegalIdentity(bondOut.financial)){
+                    "Financial in bond state don't true" using (bondOut.escrow == escrow)
+                    if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         "Borrower must have cash more than zero" using (amountOwner.quantity > 0)
-                        "Your node is in blacklist" using (owner != partyB)
+//                        "Your node is in blacklist" using (owner != partyB)
                         subFlow(CashPaymentFlow(bondOut.amount,bondOut.owner))
                     }else if(serviceHub.myInfo.isLegalIdentity(bondOut.lender)){
                         val lenderCashBalance = serviceHub.getCashBalance(bondOut.amount.token)
                         val limitedCash = lenderCashBalance.quantity / 5
                         "More than maximum limited cash in lender" using (bondOut.amount.quantity < limitedCash)
-                        subFlow(CashPaymentFlow(bondOut.amount,bondOut.financial))
+                        subFlow(CashPaymentFlow(bondOut.amount,bondOut.escrow))
                     }else {
 
                     }
 
-                    "Borrower can't be a financial" using (bondOut.owner != financial)
-                    "Lender can't be a financial" using (bondOut.lender != financial)
+                    "Borrower can't be a escrow" using (bondOut.owner != escrow)
+                    "Lender can't be a escrow" using (bondOut.lender != escrow)
                 }
             }
 

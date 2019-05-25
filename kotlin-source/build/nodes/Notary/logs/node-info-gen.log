@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94m"It's OK computer, I go to sleep after
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mtwenty minutes of inactivity too!"
+ / /     __  / ___/ __  / __ `/         [94mThere are two rules for financial success:
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94m1) Don't tell everything you know.
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/kotlin-source/build/nodes/Notary/logs
-Database connection url is              : jdbc:h2:tcp://10.35.249.240:64709/node
+Database connection url is              : jdbc:h2:tcp://10.35.246.178:62206/node

@@ -19,20 +19,29 @@ object BondSchemaV1 : MappedSchema(
     @Entity
     @Table(name = "bond_states")
     class PersistentBond(
-            @Column(name = "owner")
-            var ownerName: String,
-
-            @Column(name = "financial")
-            var financialName: String,
-
-            @Column(name = "lender")
-            var lenderName: String,
-
             @Column(name = "amount")
             var amount: Long,
 
             @Column(name = "currency")
             var currency: String,
+
+            @Column(name = "owner")
+            var ownerName: String,
+
+            @Column(name = "lender")
+            var lenderName: String,
+
+            @Column(name = "escrow")
+            var escrowName: String,
+
+            @Column(name = "interest")
+            var interest: Double,
+
+            @Column(name = "period")
+            var period: Int,
+
+            @Column(name = "status")
+            var status: String,
 
             @Column(name = "date")
             var date: Instant,
@@ -42,7 +51,7 @@ object BondSchemaV1 : MappedSchema(
     ) : PersistentState() {
         // Default constructor required by hibernate.
 //        constructor(): this("", "", "",0, Instant.now(),UUID.randomUUID())
-        constructor(): this("", "","",0,"THB",Instant.now(),UUID.randomUUID())
+        constructor(): this(0, "","","","",0.0,0,"",Instant.now(),UUID.randomUUID())
     }
 }
 

@@ -3,14 +3,9 @@ package com.example.flow
 import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BondContract
 import com.example.state.BondState
-import net.corda.confidential.IdentitySyncFlow
 import net.corda.core.contracts.Command
-import net.corda.core.contracts.Requirements.using
-import net.corda.core.contracts.StateAndContract
 import net.corda.core.contracts.UniqueIdentifier
-import net.corda.core.contracts.requireThat
 import net.corda.core.flows.*
-import net.corda.core.identity.Party
 import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
@@ -54,7 +49,7 @@ object BondFlow_Redeem {
             val bondState = bondInputStateAndRef.state.data
 
             progressTracker.currentStep = GENERATING_TRANSACTION
-            val txCommand = Command(BondContract.Commands.Redeem(), listOf(bondState.owner.owningKey,bondState.lender.owningKey,bondState.financial.owningKey))
+            val txCommand = Command(BondContract.Commands.Redeem(), listOf(bondState.owner.owningKey,bondState.lender.owningKey,bondState.escrow.owningKey))
             val txBuilder = TransactionBuilder(notary).withItems(
                     bondInputStateAndRef,
                     txCommand
@@ -68,7 +63,7 @@ object BondFlow_Redeem {
 
             progressTracker.currentStep = GATHERING_SIGS
             val flowLender = initiateFlow(bondState.lender)
-            val flowFinancial = initiateFlow(bondState.financial)
+            val flowFinancial = initiateFlow(bondState.escrow)
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowFinancial), GATHERING_SIGS.childProgressTracker()))
 
 

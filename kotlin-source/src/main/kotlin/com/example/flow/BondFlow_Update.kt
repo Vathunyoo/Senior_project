@@ -3,12 +3,9 @@ package com.example.flow
 import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BondContract
 import com.example.state.BondState
-import net.corda.confidential.IdentitySyncFlow
 import net.corda.core.contracts.*
-import net.corda.core.contracts.Requirements.using
 import net.corda.core.flows.*
 import net.corda.core.identity.CordaX500Name
-import net.corda.core.identity.Party
 import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
@@ -61,7 +58,7 @@ object BondFlow_Update {
             val newAmount = Amount(newQuatity,amount.token)
             val bondOutputState = bondState.copy(amount = newAmount)
             val bondOutputStateAndContract = StateAndContract(bondOutputState, BondContract.Bond_CONTRACT_ID)
-            val txCommand = Command(BondContract.Commands.Update(), listOf(bondState.owner.owningKey,bondState.lender.owningKey,bondState.financial.owningKey))
+            val txCommand = Command(BondContract.Commands.Update(), listOf(bondState.owner.owningKey,bondState.lender.owningKey,bondState.escrow.owningKey))
 
             val txBuilder = TransactionBuilder(notary).withItems(
                     bondOutputStateAndContract,
@@ -79,10 +76,10 @@ object BondFlow_Update {
             val ownerCashBalance = serviceHub.getCashBalance(bondState.amount.token)
             val flowLender = initiateFlow(bondOutputState.lender)
             flowLender.send(amount.quantity)
-            val flowFinancial = initiateFlow(bondOutputState.financial)
+            val flowFinancial = initiateFlow(bondOutputState.escrow)
             flowFinancial.send(amount.quantity)
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowFinancial), GATHERING_SIGS.childProgressTracker()))
-            subFlow(CashPaymentFlow(amount,bondOutputState.financial))
+            subFlow(CashPaymentFlow(amount,bondOutputState.escrow))
 
             progressTracker.currentStep = FINALISING_TRANSACTION
             return subFlow(FinalityFlow(fullySignedTx, FINALISING_TRANSACTION.childProgressTracker()))
@@ -102,7 +99,7 @@ object BondFlow_Update {
                     val x500NameFinancial = CordaX500Name.parse("O=Financial,L=Paris,C=FR")
                     val financial = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameFinancial)
 
-                    if(serviceHub.myInfo.isLegalIdentity(bondOut.financial)){
+                    if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         val paidAmount = Amount(amount,bondOut.amount.token)
                         subFlow(CashPaymentFlow(paidAmount,bondOut.lender))
                     }else if(serviceHub.myInfo.isLegalIdentity(bondOut.lender)){
@@ -110,8 +107,8 @@ object BondFlow_Update {
                     }else {
 
                     }
-                    "Borrower can't be a financial" using (bondOut.owner != financial)
-                    "Lender can't be a financial" using (bondOut.lender != financial)
+                    "Borrower can't be a escrow" using (bondOut.owner != financial)
+                    "Lender can't be a escrow" using (bondOut.lender != financial)
                 }
             }
             return subFlow(signTransactionFlow)

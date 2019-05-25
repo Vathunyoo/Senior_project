@@ -15,23 +15,29 @@ import java.util.*
 data class BondState (val amount: Amount<Currency>, // Amount bond with lender
                       val owner: Party, // Owner of bond
                       val lender: Party, // Lender of bond
-                      val financial: Party, // Financial relevant with bond
+                      val escrow: Party, // Financial relevant with bond
+                      val interest: Double,
+                      val period: Int,
+                      val status: String,
                       val duedate: Instant, // Date (Create bond)
                       override val linearId: UniqueIdentifier = UniqueIdentifier()): // Linear id of bond
         LinearState, QueryableState, SchedulableState {
 
     // Override participant to state (Linear state)
-    override val participants: List<AbstractParty> get() = listOf(owner, lender, financial)
+    override val participants: List<AbstractParty> get() = listOf(owner, lender, escrow)
 
     // Mapping to object (Queryable state and persistance state)
     override fun generateMappedObject(schema: MappedSchema): PersistentState {
         return when (schema) {
             is BondSchemaV1 -> BondSchemaV1.PersistentBond(
-                    this.owner.name.toString(),
-                    this.financial.name.toString(),
-                    this.lender.name.toString(),
                     this.amount.quantity,
                     this.amount.token.toString(),
+                    this.owner.name.toString(),
+                    this.lender.name.toString(),
+                    this.escrow.name.toString(),
+                    this.interest,
+                    this.period,
+                    this.status,
                     this.duedate,
                     this.linearId.id
             )

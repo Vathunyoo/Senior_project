@@ -173,27 +173,28 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
         return Response.status(status).entity(message).build()
     }
 
-    @GET
-    @Path("obligations")
-    @Produces(MediaType.APPLICATION_JSON)
-    fun obligations(): List<BondState> {
-        val statesAndRefs = rpcOps.vaultQuery(BondState::class.java).states
-        return statesAndRefs
-                .map { stateAndRef -> stateAndRef.state.data }
-                .map { state ->
-                    // We map the anonymous lender and borrower to well-known identities if possible.
-                    val possiblyWellKnownLender = rpcOps.wellKnownPartyFromAnonymous(state.lender) ?: state.lender
-                    val possiblyWellKnownBorrower = rpcOps.wellKnownPartyFromAnonymous(state.owner) ?: state.owner
-                    val possiblyWellKnownFinancial = rpcOps.wellKnownPartyFromAnonymous(state.financial) ?: state.financial
-
-                    BondState(state.amount,
-                            possiblyWellKnownBorrower,
-                            possiblyWellKnownLender,
-                            possiblyWellKnownFinancial,
-                            state.duedate,
-                            state.linearId)
-                }
-    }
+    // Check this state for connect api
+//    @GET
+//    @Path("obligations")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    fun obligations(): List<BondState> {
+//        val statesAndRefs = rpcOps.vaultQuery(BondState::class.java).states
+//        return statesAndRefs
+//                .map { stateAndRef -> stateAndRef.state.data }
+//                .map { state ->
+//                    // We map the anonymous lender and borrower to well-known identities if possible.
+//                    val possiblyWellKnownLender = rpcOps.wellKnownPartyFromAnonymous(state.lender) ?: state.lender
+//                    val possiblyWellKnownBorrower = rpcOps.wellKnownPartyFromAnonymous(state.owner) ?: state.owner
+//                    val possiblyWellKnownFinancial = rpcOps.wellKnownPartyFromAnonymous(state.escrow) ?: state.escrow
+//
+//                    BondState(state.amount,
+//                            possiblyWellKnownBorrower,
+//                            possiblyWellKnownLender,
+//                            possiblyWellKnownFinancial,
+//                            state.duedate,
+//                            state.linearId)
+//                }
+//    }
 
 //    @PUT
 //    @Path("Issue_bond")

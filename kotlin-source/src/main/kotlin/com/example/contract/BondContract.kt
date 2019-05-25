@@ -2,10 +2,7 @@ package com.example.contract
 
 import com.example.state.BondState
 import net.corda.core.contracts.*
-import net.corda.core.contracts.Requirements.using
-import net.corda.core.identity.CordaX500Name
 import net.corda.core.transactions.LedgerTransaction
-import net.corda.finance.contracts.getCashBalance
 import java.security.PublicKey
 
 class BondContract : Contract {
@@ -48,7 +45,7 @@ class BondContract : Contract {
         // as unsafe check throw exception when It's not a bondstate type
         val bondOut = tx.outputStates.single() as BondState
         "The lender and the borrower cannot be the same entity." using (bondOut.lender != bondOut.owner)
-        "The Financial and the borrower cannot be the same entity." using (bondOut.financial != bondOut.owner)
+        "The Financial and the borrower cannot be the same entity." using (bondOut.escrow != bondOut.owner)
 
         //--------------------------------
         // Verify signer
