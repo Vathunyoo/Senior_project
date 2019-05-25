@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mThere was an earthquake in California,
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94ma local bank went into de-fault.
+ / /     __  / ___/ __  / __ `/         [94mComputers are useless. They can only
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mgive you answers.  -- Picasso
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/java-source/build/nodes/PartyC/logs
-Database connection url is              : jdbc:h2:tcp://10.35.246.178:62177/node
+Database connection url is              : jdbc:h2:tcp://10.35.248.33:51163/node

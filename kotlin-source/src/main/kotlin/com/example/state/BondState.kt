@@ -48,7 +48,7 @@ data class BondState (val amount: Amount<Currency>, // Amount bond with lender
     override fun supportedSchemas(): Iterable<MappedSchema> = listOf(BondSchemaV1)
 
     override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity? {
-        return ScheduledActivity(flowLogicRefFactory.create(BondFlow_Redeem.Initiator::class.java, thisStateRef), duedate)
+        return ScheduledActivity(flowLogicRefFactory.create(BondFlow_Redeem.Initiator::class.java, thisStateRef.txhash.toString()), duedate)
     }
 }
 

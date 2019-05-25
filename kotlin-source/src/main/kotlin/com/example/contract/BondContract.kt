@@ -45,7 +45,7 @@ class BondContract : Contract {
         // as unsafe check throw exception when It's not a bondstate type
         val bondOut = tx.outputStates.single() as BondState
         "The lender and the borrower cannot be the same entity." using (bondOut.lender != bondOut.owner)
-        "The Financial and the borrower cannot be the same entity." using (bondOut.escrow != bondOut.owner)
+        "The Escrow and the borrower cannot be the same entity." using (bondOut.escrow != bondOut.owner)
 
         //--------------------------------
         // Verify signer

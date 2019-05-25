@@ -4,6 +4,7 @@ import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BondContract
 import com.example.state.BondState
 import net.corda.core.contracts.*
+import net.corda.core.crypto.SecureHash
 import net.corda.core.flows.*
 import net.corda.core.identity.CordaX500Name
 import net.corda.core.node.services.queryBy
@@ -20,7 +21,7 @@ object BondFlow_Update {
     @InitiatingFlow
     @StartableByRPC
     class Initiator(val amount: Amount<Currency>,
-                    val bondref: UniqueIdentifier) : FlowLogic<SignedTransaction>() {
+                    val bondref: String) : FlowLogic<SignedTransaction>() {
 
         companion object {
             object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction for Update bond state.")
@@ -48,10 +49,15 @@ object BondFlow_Update {
         @Suspendable
         override fun call(): SignedTransaction {
             val notary = serviceHub.networkMapCache.notaryIdentities[0]
+            // Query by criteria
+//            val queryCriteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(bondref))
+//            val bondInputStateAndRef = serviceHub.vaultService.queryBy<BondState>(queryCriteria).states.single()
+//            val bondState = bondInputStateAndRef.state.data
 
-            val queryCriteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(bondref))
-            val bondInputStateAndRef = serviceHub.vaultService.queryBy<BondState>(queryCriteria).states.single()
-            val bondState = bondInputStateAndRef.state.data
+            val secureHashBond = SecureHash.parse(bondref)
+            val stateRefBond = StateRef(secureHashBond,0)
+            val bondState = serviceHub.loadState(stateRefBond).data as BondState
+            val bondInputStateAndRef = serviceHub.toStateAndRef<BondState>(stateRefBond)
 
             progressTracker.currentStep = GENERATING_TRANSACTION
             val newQuatity = bondState.amount.quantity - amount.quantity
@@ -96,8 +102,8 @@ object BondFlow_Update {
                 override fun checkTransaction(stx: SignedTransaction) = requireThat {
                     val output = stx.tx.outputs.single().data
                     val bondOut = output as BondState
-                    val x500NameFinancial = CordaX500Name.parse("O=Financial,L=Paris,C=FR")
-                    val financial = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameFinancial)
+                    val x500NameEscrow = CordaX500Name.parse("O=Escrow,L=Paris,C=FR")
+                    val escrow = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameEscrow)
 
                     if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         val paidAmount = Amount(amount,bondOut.amount.token)
@@ -107,8 +113,8 @@ object BondFlow_Update {
                     }else {
 
                     }
-                    "Borrower can't be a escrow" using (bondOut.owner != financial)
-                    "Lender can't be a escrow" using (bondOut.lender != financial)
+                    "Borrower can't be a escrow" using (bondOut.owner != escrow)
+                    "Lender can't be a escrow" using (bondOut.lender != escrow)
                 }
             }
             return subFlow(signTransactionFlow)

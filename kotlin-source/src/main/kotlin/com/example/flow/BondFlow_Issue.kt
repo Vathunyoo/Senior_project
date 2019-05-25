@@ -130,7 +130,7 @@ object BondFlow_Issue {
                     val x500NamePartyB = CordaX500Name.parse("O=PartyB,L=New York,C=US")
                     val partyB = serviceHub.identityService.wellKnownPartyFromX500Name(x500NamePartyB)
 
-                    "Financial in bond state don't true" using (bondOut.escrow == escrow)
+                    "Escrow in bond state don't true" using (bondOut.escrow == escrow)
                     if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         "Borrower must have cash more than zero" using (amountOwner.quantity > 0)
 //                        "Your node is in blacklist" using (owner != partyB)

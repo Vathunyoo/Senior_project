@@ -2,20 +2,23 @@ package com.example.flow
 
 import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BondContract
+import com.example.state.BlacklistState
 import com.example.state.BondState
-import net.corda.core.contracts.Command
-import net.corda.core.contracts.UniqueIdentifier
+import net.corda.core.contracts.*
+import net.corda.core.crypto.SecureHash
 import net.corda.core.flows.*
+import net.corda.core.identity.CordaX500Name
 import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import net.corda.finance.flows.CashPaymentFlow
 
 object BondFlow_Redeem {
     @InitiatingFlow
     @StartableByRPC
-    class Initiator(val bondref: UniqueIdentifier) : FlowLogic<SignedTransaction>() {
+    class Initiator(val bondref: String) : FlowLogic<SignedTransaction>() {
 
         companion object {
             object GENERATING_TRANSACTION : ProgressTracker.Step("Generating transaction based for redeem bond state.")
@@ -43,10 +46,10 @@ object BondFlow_Redeem {
         @Suspendable
         override fun call(): SignedTransaction {
             val notary = serviceHub.networkMapCache.notaryIdentities[0]
-
-            val queryCriteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(bondref))
-            val bondInputStateAndRef = serviceHub.vaultService.queryBy<BondState>(queryCriteria).states.single()
-            val bondState = bondInputStateAndRef.state.data
+            val secureHashBond = SecureHash.parse(bondref)
+            val stateRefBond = StateRef(secureHashBond,0)
+            val bondState = serviceHub.loadState(stateRefBond).data as BondState
+            val bondInputStateAndRef = serviceHub.toStateAndRef<BondState>(stateRefBond)
 
             progressTracker.currentStep = GENERATING_TRANSACTION
             val txCommand = Command(BondContract.Commands.Redeem(), listOf(bondState.owner.owningKey,bondState.lender.owningKey,bondState.escrow.owningKey))
@@ -63,8 +66,8 @@ object BondFlow_Redeem {
 
             progressTracker.currentStep = GATHERING_SIGS
             val flowLender = initiateFlow(bondState.lender)
-            val flowFinancial = initiateFlow(bondState.escrow)
-            val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowFinancial), GATHERING_SIGS.childProgressTracker()))
+            val flowEscrow = initiateFlow(bondState.escrow)
+            val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowEscrow), GATHERING_SIGS.childProgressTracker()))
 
 
             progressTracker.currentStep = FINALISING_TRANSACTION
@@ -79,7 +82,25 @@ object BondFlow_Redeem {
         override fun call(): SignedTransaction {
 
             val signTransactionFlow = object : SignTransactionFlow(otherPartyFlow) {
-                override fun checkTransaction(stx: SignedTransaction) = Unit
+                override fun checkTransaction(stx: SignedTransaction) = requireThat {
+                    val input = stx.tx.inputs[0]
+                    val bondIn = serviceHub.loadState(input).data as BondState
+                    val x500NameEscrow = CordaX500Name.parse("O=Escrow,L=Paris,C=FR")
+                    val escrow = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameEscrow)
+                    val queryVaultPage = serviceHub.vaultService.queryBy<BlacklistState>()
+                    val listStateAndRef = queryVaultPage.states
+                    if(serviceHub.myInfo.isLegalIdentity(bondIn.escrow)){
+                        if(bondIn.status == "Pending"){
+                            for(stateRef in listStateAndRef){
+                                if(stateRef.state.data.backlist == bondIn.lender){
+                                    subFlow(Blacklist_Update.Initiator(stateRef.ref.txhash.toString()))
+                                }
+                            }
+                            subFlow(Blacklist_Issue.Initiator(bondIn.lender,bondIn.escrow))
+                        }
+                    }
+                    "Lender can't be a escrow" using (bondIn.lender != escrow)
+                }
             }
 
             return subFlow(signTransactionFlow)
