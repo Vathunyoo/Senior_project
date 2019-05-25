@@ -2,6 +2,7 @@ package com.example.flow
 
 import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BondContract
+import com.example.state.BlacklistState
 import com.example.state.BondState
 import jdk.nashorn.internal.runtime.JSType.toLong
 import net.corda.core.contracts.Amount
@@ -11,6 +12,7 @@ import net.corda.core.contracts.requireThat
 import net.corda.core.flows.*
 import net.corda.core.identity.CordaX500Name
 import net.corda.core.identity.Party
+import net.corda.core.node.services.queryBy
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
@@ -129,11 +131,18 @@ object BondFlow_Issue {
                     val escrow = serviceHub.identityService.wellKnownPartyFromX500Name(x500NameEscrow)
                     val x500NamePartyB = CordaX500Name.parse("O=PartyB,L=New York,C=US")
                     val partyB = serviceHub.identityService.wellKnownPartyFromX500Name(x500NamePartyB)
+                    val queryVaultPage = serviceHub.vaultService.queryBy<BlacklistState>()
+                    val listStateAndRef = queryVaultPage.states
 
                     "Escrow in bond state don't true" using (bondOut.escrow == escrow)
                     if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         "Borrower must have cash more than zero" using (amountOwner.quantity > 0)
 //                        "Your node is in blacklist" using (owner != partyB)
+                        for(stateRef in listStateAndRef){
+                            if(stateRef.state.data.backlist == bondOut.owner){
+                                subFlow(CashPaymentFlow(bondOut.amount,bondOut.lender))
+                            }
+                        }
                         subFlow(CashPaymentFlow(bondOut.amount,bondOut.owner))
                     }else if(serviceHub.myInfo.isLegalIdentity(bondOut.lender)){
                         val lenderCashBalance = serviceHub.getCashBalance(bondOut.amount.token)
