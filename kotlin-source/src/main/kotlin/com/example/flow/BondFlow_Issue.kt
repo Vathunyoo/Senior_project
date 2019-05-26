@@ -133,14 +133,23 @@ object BondFlow_Issue {
                     val partyB = serviceHub.identityService.wellKnownPartyFromX500Name(x500NamePartyB)
                     val queryVaultPage = serviceHub.vaultService.queryBy<BlacklistState>()
                     val listStateAndRef = queryVaultPage.states
-
+                    logger.info("\n")
+                    logger.info("Signed transaction : " + stx.toString())
+                    logger.info("My info : " + serviceHub.myInfo.toString())
+                    logger.info("Vault page : " + queryVaultPage.toString())
+                    logger.info("List of state and ref : " + listStateAndRef.toString())
+                    logger.info("Bond state output : " + bondOut.toString())
+                    logger.info("\n")
                     "Escrow in bond state don't true" using (bondOut.escrow == escrow)
                     if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         "Borrower must have cash more than zero" using (amountOwner.quantity > 0)
 //                        "Your node is in blacklist" using (owner != partyB)
                         for(stateRef in listStateAndRef){
-                            if(stateRef.state.data.backlist == bondOut.owner){
-                                subFlow(CashPaymentFlow(bondOut.amount,bondOut.lender))
+                            if(stateRef.state.data.blacklist == bondOut.owner){
+                                if(stateRef.state.data.point > 3){
+                                    subFlow(CashPaymentFlow(bondOut.amount,bondOut.lender))
+                                    "You are in blacklist (point more than 3)" using (stateRef.state.data.blacklist != bondOut.owner)
+                                }
                             }
                         }
                         subFlow(CashPaymentFlow(bondOut.amount,bondOut.owner))

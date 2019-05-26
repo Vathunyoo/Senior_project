@@ -9,4 +9,4 @@
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/kotlin-source/build/nodes/PartyA/logs
-Database connection url is              : jdbc:h2:tcp://10.35.246.178:50192/node
+Database connection url is              : jdbc:h2:tcp://10.35.246.178:53851/node

@@ -3,11 +3,9 @@ package com.example.flow
 import co.paralleluniverse.fibers.Suspendable
 import com.example.contract.BlacklistContract
 import com.example.state.BlacklistState
-import com.example.state.BondState
 import net.corda.core.contracts.*
 import net.corda.core.crypto.SecureHash
 import net.corda.core.flows.*
-import net.corda.core.identity.Party
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
@@ -76,7 +74,7 @@ object Blacklist_Update {
 
             // Stage 4.
             progressTracker.currentStep = GATHERING_SIGS
-            val flowBlackParty = initiateFlow(blackState.backlist)
+            val flowBlackParty = initiateFlow(blackState.blacklist)
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowBlackParty), GATHERING_SIGS.childProgressTracker()))
 
             // Stage 5.

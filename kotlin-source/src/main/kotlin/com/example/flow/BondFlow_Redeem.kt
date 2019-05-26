@@ -9,11 +9,9 @@ import net.corda.core.crypto.SecureHash
 import net.corda.core.flows.*
 import net.corda.core.identity.CordaX500Name
 import net.corda.core.node.services.queryBy
-import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
-import net.corda.finance.flows.CashPaymentFlow
 
 object BondFlow_Redeem {
     @InitiatingFlow
@@ -90,13 +88,23 @@ object BondFlow_Redeem {
                     val queryVaultPage = serviceHub.vaultService.queryBy<BlacklistState>()
                     val listStateAndRef = queryVaultPage.states
                     if(serviceHub.myInfo.isLegalIdentity(bondIn.escrow)){
-                        if(bondIn.status == "Pending"){
+                        logger.info("My info : " + serviceHub.myInfo.toString())
+                        logger.info("Bond in : " + bondIn.toString())
+
+                        if(bondIn.status == "pending"){
+                            logger.info("Redeem if pending")
+                            var check = true
                             for(stateRef in listStateAndRef){
-                                if(stateRef.state.data.backlist == bondIn.lender){
+                                if(stateRef.state.data.blacklist == bondIn.owner){
+                                    logger.info("blacklist found update")
+                                    check = false
                                     subFlow(Blacklist_Update.Initiator(stateRef.ref.txhash.toString()))
                                 }
                             }
-                            subFlow(Blacklist_Issue.Initiator(bondIn.lender,bondIn.escrow))
+                            if(check == true){
+                                logger.info("blacklist not found issue")
+                                subFlow(Blacklist_Issue.Initiator(bondIn.owner,bondIn.escrow))
+                            }
                         }
                     }
                     "Lender can't be a escrow" using (bondIn.lender != escrow)
