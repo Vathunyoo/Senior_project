@@ -104,14 +104,32 @@ object BondFlow_Issue {
             val flowLender = initiateFlow(lender)
             flowLender.send(serviceHub.myInfo.legalIdentities.first())
             flowLender.send(ownerCashBalance)
-            val flowFinancial = initiateFlow(escrow)
-            flowFinancial.send(serviceHub.myInfo.legalIdentities.first())
-            flowFinancial.send(ownerCashBalance)
-            val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowFinancial), GATHERING_SIGS.childProgressTracker()))
+            val flowEscrow = initiateFlow(escrow)
+            flowEscrow.send(serviceHub.myInfo.legalIdentities.first())
+            flowEscrow.send(ownerCashBalance)
+            val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowEscrow), GATHERING_SIGS.childProgressTracker()))
 
             // Stage 5.
             progressTracker.currentStep = FINALISING_TRANSACTION
             // Notarise and record the transaction in both parties' vaults.
+
+            // Show data for owner
+            logger.info("---------------------------------------------------------------------")
+            logger.info("My info (owner) : " + serviceHub.myInfo.toString())
+            logger.info("\n")
+            logger.info("Cash balance (owner) : " + ownerCashBalance.toString() + " " + ownerCashBalance.token.toString())
+            logger.info("\n")
+            logger.info("Bond state output : " + bondState.toString())
+            logger.info("\n")
+            logger.info("Command for bond state (issue) : " + txCommand.toString())
+            logger.info("\n")
+            logger.info("Flow session for lender : " + flowLender.toString())
+            logger.info("\n")
+            logger.info("Flow session for escrow : " + flowEscrow.toString())
+            logger.info("\n")
+            logger.info("Fully signed transaction : " + fullySignedTx.toString())
+            logger.info("---------------------------------------------------------------------")
+
             // return signed transaction
             return subFlow(FinalityFlow(fullySignedTx, FINALISING_TRANSACTION.childProgressTracker()))
         }
@@ -133,16 +151,10 @@ object BondFlow_Issue {
                     val partyB = serviceHub.identityService.wellKnownPartyFromX500Name(x500NamePartyB)
                     val queryVaultPage = serviceHub.vaultService.queryBy<BlacklistState>()
                     val listStateAndRef = queryVaultPage.states
-                    logger.info("\n")
-                    logger.info("Signed transaction : " + stx.toString())
-                    logger.info("My info : " + serviceHub.myInfo.toString())
-                    logger.info("Vault page : " + queryVaultPage.toString())
-                    logger.info("List of state and ref : " + listStateAndRef.toString())
-                    logger.info("Bond state output : " + bondOut.toString())
-                    logger.info("\n")
                     "Escrow in bond state don't true" using (bondOut.escrow == escrow)
                     if(serviceHub.myInfo.isLegalIdentity(bondOut.escrow)){
                         "Borrower must have cash more than zero" using (amountOwner.quantity > 0)
+                        val escrowCashBalance = serviceHub.getCashBalance(bondOut.amount.token)
 //                        "Your node is in blacklist" using (owner != partyB)
                         for(stateRef in listStateAndRef){
                             if(stateRef.state.data.blacklist == bondOut.owner){
@@ -152,11 +164,40 @@ object BondFlow_Issue {
                                 }
                             }
                         }
+                        // Show data for Escrow
+                        logger.info("---------------------------------------------------------------------")
+                        logger.info("My info (escrow) : " + serviceHub.myInfo.toString())
+                        logger.info("\n")
+                        logger.info("Cash balance (escrow) : " + escrowCashBalance.toString() + " " + escrowCashBalance.token.toString())
+                        logger.info("\n")
+                        logger.info("Bond state output : " + bondOut.toString())
+                        logger.info("\n")
+                        logger.info("Command for bond state (issue) : " + stx.tx.commands.toString())
+                        logger.info("\n")
+                        logger.info("Blacklist query vault.page" + queryVaultPage.toString())
+                        logger.info("\n")
+                        logger.info("Blacklist State and Ref list" + listStateAndRef.toString())
+                        logger.info("---------------------------------------------------------------------")
+
                         subFlow(CashPaymentFlow(bondOut.amount,bondOut.owner))
                     }else if(serviceHub.myInfo.isLegalIdentity(bondOut.lender)){
                         val lenderCashBalance = serviceHub.getCashBalance(bondOut.amount.token)
                         val limitedCash = lenderCashBalance.quantity / 5
                         "More than maximum limited cash in lender" using (bondOut.amount.quantity < limitedCash)
+                        // Show data for Lender
+                        logger.info("---------------------------------------------------------------------")
+                        logger.info("My info (lender) : " + serviceHub.myInfo.toString())
+                        logger.info("\n")
+                        logger.info("Cash balance (lender) : " + lenderCashBalance.toString() + " " + lenderCashBalance.token.toString())
+                        logger.info("\n")
+                        logger.info("Bond state output : " + bondOut.toString())
+                        logger.info("\n")
+                        logger.info("Command for bond state (issue) : " + stx.tx.commands.toString())
+                        logger.info("\n")
+                        logger.info("Blacklist query vault.page" + queryVaultPage.toString())
+                        logger.info("\n")
+                        logger.info("Blacklist State and Ref list" + listStateAndRef.toString())
+                        logger.info("---------------------------------------------------------------------")
                         subFlow(CashPaymentFlow(bondOut.amount,bondOut.escrow))
                     }else {
 

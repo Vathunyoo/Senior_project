@@ -12,6 +12,7 @@ import net.corda.core.node.services.queryBy
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import net.corda.finance.contracts.getCashBalance
 
 object BondFlow_Redeem {
     @InitiatingFlow
@@ -63,12 +64,30 @@ object BondFlow_Redeem {
             val partSignedTx = serviceHub.signInitialTransaction(txBuilder)
 
             progressTracker.currentStep = GATHERING_SIGS
+            val ownerCashBalance = serviceHub.getCashBalance(bondState.amount.token)
             val flowLender = initiateFlow(bondState.lender)
             val flowEscrow = initiateFlow(bondState.escrow)
             val fullySignedTx = subFlow(CollectSignaturesFlow(partSignedTx, setOf(flowLender,flowEscrow), GATHERING_SIGS.childProgressTracker()))
 
 
             progressTracker.currentStep = FINALISING_TRANSACTION
+            // Show data for owner
+            logger.info("---------------------------------------------------------------------")
+            logger.info("My info (owner) : " + serviceHub.myInfo.toString())
+            logger.info("\n")
+            logger.info("Cash balance (owner) : " + ownerCashBalance.toString() + " " + ownerCashBalance.token.toString())
+            logger.info("\n")
+            logger.info("Bond state output : " + bondState.toString())
+            logger.info("\n")
+            logger.info("Command for bond state (redeem) : " + txCommand.toString())
+            logger.info("\n")
+            logger.info("Flow session for lender : " + flowLender.toString())
+            logger.info("\n")
+            logger.info("Flow session for escrow : " + flowEscrow.toString())
+            logger.info("\n")
+            logger.info("Fully signed transaction : " + fullySignedTx.toString())
+            logger.info("---------------------------------------------------------------------")
+
             return subFlow(FinalityFlow(fullySignedTx, FINALISING_TRANSACTION.childProgressTracker()))
         }
     }
@@ -88,24 +107,47 @@ object BondFlow_Redeem {
                     val queryVaultPage = serviceHub.vaultService.queryBy<BlacklistState>()
                     val listStateAndRef = queryVaultPage.states
                     if(serviceHub.myInfo.isLegalIdentity(bondIn.escrow)){
-                        logger.info("My info : " + serviceHub.myInfo.toString())
-                        logger.info("Bond in : " + bondIn.toString())
-
+                        val escrowCashBalance = serviceHub.getCashBalance(bondIn.amount.token)
                         if(bondIn.status == "pending"){
-                            logger.info("Redeem if pending")
                             var check = true
                             for(stateRef in listStateAndRef){
                                 if(stateRef.state.data.blacklist == bondIn.owner){
-                                    logger.info("blacklist found update")
                                     check = false
                                     subFlow(Blacklist_Update.Initiator(stateRef.ref.txhash.toString()))
                                 }
                             }
                             if(check == true){
-                                logger.info("blacklist not found issue")
                                 subFlow(Blacklist_Issue.Initiator(bondIn.owner,bondIn.escrow))
                             }
                         }
+                        // Show data for Escrow
+                        logger.info("---------------------------------------------------------------------")
+                        logger.info("My info (escrow) : " + serviceHub.myInfo.toString())
+                        logger.info("\n")
+                        logger.info("Cash balance (escrow) : " + escrowCashBalance.toString() + " " + escrowCashBalance.token.toString())
+                        logger.info("\n")
+                        logger.info("Bond state input : " + bondIn.toString())
+                        logger.info("\n")
+                        logger.info("Command for bond state (redeem) : " + stx.tx.commands.toString())
+                        logger.info("\n")
+                        logger.info("Blacklist query vault.page" + queryVaultPage.toString())
+                        logger.info("\n")
+                        logger.info("Blacklist State and Ref list" + listStateAndRef.toString())
+                        logger.info("---------------------------------------------------------------------")
+                    }else if(serviceHub.myInfo.isLegalIdentity(bondIn.lender)){
+                        // Show data for Lender
+                        val lenderCashBalance = serviceHub.getCashBalance(bondIn.amount.token)
+                        logger.info("---------------------------------------------------------------------")
+                        logger.info("My info (lender) : " + serviceHub.myInfo.toString())
+                        logger.info("\n")
+                        logger.info("Cash balance (lender) : " + lenderCashBalance.toString() + " " + lenderCashBalance.token.toString())
+                        logger.info("\n")
+                        logger.info("Bond state input : " + bondIn.toString())
+                        logger.info("\n")
+                        logger.info("Command for bond state (redeem) : " + stx.tx.commands.toString())
+                        logger.info("---------------------------------------------------------------------")
+                    }else {
+
                     }
                     "Lender can't be a escrow" using (bondIn.lender != escrow)
                 }

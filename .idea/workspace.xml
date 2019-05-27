@@ -58,16 +58,6 @@
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/PartyC/network-parameters" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/PartyC/network-parameters" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/PartyC/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/PartyC/nodeInfo-FFBDA48A181D794D611797BE2B7BD976BD1C5DA477611401F6F0D1F049E8896E" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-source/build/nodes/PartyC/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build/nodes/PartyC/persistence.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$FINALISING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$FINALISING_TRANSACTION.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$GATHERING_SIGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$GATHERING_SIGS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$GENERATING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$GENERATING_TRANSACTION.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$SIGNING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$SIGNING_TRANSACTION.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion$VERIFYING_TRANSACTION.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Initiator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Responder$call$signTransactionFlow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Responder$call$signTransactionFlow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Responder.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update$Responder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/Blacklist_Update.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Initiator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Responder$call$signTransactionFlow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Responder$call$signTransactionFlow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Responder.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Issue$Responder.class" afterDir="false" />
@@ -81,12 +71,31 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Redeem$Responder$call$signTransactionFlow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Redeem$Responder$call$signTransactionFlow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Redeem$Responder.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Redeem$Responder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Redeem.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Redeem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/state/BlacklistState.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/state/BlacklistState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$FINALISING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$FINALISING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$GATHERING_SIGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$GATHERING_SIGS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$GENERATING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$GENERATING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$SIGNING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$SIGNING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion$VERIFYING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Initiator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Responder$call$signTransactionFlow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Responder$call$signTransactionFlow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Responder.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update$Responder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/classes/kotlin/main/com/example/flow/BondFlow_Update.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/libs/cordapp-example-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/libs/cordapp-example-0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-5C67DD6746A339DEFB4479D2E532B51ED87203C4C66A0BEA7C2279DD361030CB" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-5C67DD6746A339DEFB4479D2E532B51ED87203C4C66A0BEA7C2279DD361030CB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/journal/activemq-data-2.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/artemis/journal/server.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/journal/activemq-data-2.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/brokers/rpc/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/certificates/sslkeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/cordapps/cordapp-example-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Escrow/cordapps/cordapp-example-0.1.jar" afterDir="false" />
@@ -101,6 +110,9 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/artemis/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/Notary/certificates/sslkeystore.jks" afterDir="false" />
@@ -115,8 +127,14 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/artemis/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/brokers/rpc/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyA/certificates/sslkeystore.jks" afterDir="false" />
@@ -132,8 +150,14 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/artemis/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-2.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-2.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-2.amq" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/activemq-data-2.amq" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/brokers/rpc/journal/server.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/nodekeystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/certificates/sslkeystore.jks" afterDir="false" />
@@ -144,10 +168,10 @@
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/network-parameters" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/network-parameters" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/build/nodes/PartyB/persistence.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Update.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Update.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BlacklistState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BlacklistState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BondSchema.kt" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BondSchema.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -173,8 +197,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1950">
-              <caret line="150" column="40" selection-start-line="150" selection-start-column="40" selection-end-line="150" selection-end-column="40" />
+            <state relative-caret-position="471">
+              <caret line="178" column="96" lean-forward="true" selection-start-line="176" selection-start-column="23" selection-end-line="178" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BondState.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="729">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="e#27#447#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="131" column="41" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -188,11 +233,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BlacklistSchema.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="116" column="1" lean-forward="true" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+            <state relative-caret-position="45">
+              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -200,8 +245,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BlacklistContract.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="693">
+              <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
               <folding>
                 <element signature="e#30#273#0" expanded="true" />
               </folding>
@@ -210,10 +255,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Issue.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="107" column="21" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="21" />
+            <state relative-caret-position="-433">
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="94" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Update.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="52" column="59" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -253,18 +316,18 @@
         <option value="$PROJECT_DIR$/kotlin-source/src/main/resources/exampleWeb/js/main.js" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/resources/exampleWeb/index.html" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/api/ExampleApi.kt" />
-        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BondSchema.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/build.gradle" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BlacklistSchema.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BlacklistContract.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Issue.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BondState.kt" />
-        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Backlist_Update.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Update.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BlacklistState.kt" />
+        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BondSchema.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt" />
+        <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt" />
         <option value="$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt" />
       </list>
     </option>
@@ -489,7 +552,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558861951220" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558946152568" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -671,7 +734,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22317597" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22317597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -701,7 +764,7 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22317597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -929,37 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/api/ExampleApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BondSchema.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="55" selection-end-column="1" />
-          <folding>
-            <element signature="e#28#323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BlacklistSchema.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/3.3-corda/e2a51041991ca78ebe5270bf9da1e748b8d0e5a0/corda-core-3.3-corda-sources.jar!/net/corda/core/contracts/Structures.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -971,23 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="35" column="127" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Issue.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-477">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BondState.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="50" column="130" selection-start-line="50" selection-start-column="130" selection-end-line="50" selection-end-column="130" />
-          <folding>
-            <element signature="e#27#447#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,24 +1020,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
+    <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="56" column="49" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="49" />
+        <state relative-caret-position="539">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/api/ExampleApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="198" column="6" lean-forward="true" selection-start-line="198" selection-start-column="6" selection-end-line="218" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BondSchema.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#28#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BondContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/state/BondState.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#27#447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/schema/BlacklistSchema.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BlacklistContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="100" column="1" lean-forward="true" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+          <folding>
+            <element signature="e#30#273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Issue.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-433">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/Blacklist_Update.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="167">
           <caret line="52" column="59" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Update.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="107" column="21" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="21" />
+        <state relative-caret-position="250">
+          <caret line="93" column="12" selection-start-line="93" selection-start-column="12" selection-end-line="94" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1033,27 +1106,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/contract/BlacklistContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="e#30#273#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Issue.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="150" column="40" selection-start-line="150" selection-start-column="40" selection-end-line="150" selection-end-column="40" />
+        <state relative-caret-position="471">
+          <caret line="178" column="96" lean-forward="true" selection-start-line="176" selection-start-column="23" selection-end-line="178" selection-end-column="96" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/flow/BondFlow_Redeem.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="116" column="1" lean-forward="true" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+        <state relative-caret-position="382">
+          <caret line="131" column="41" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
         </state>
       </provider>
     </entry>
