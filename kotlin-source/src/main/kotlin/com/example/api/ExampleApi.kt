@@ -4,10 +4,13 @@ import com.example.flow.BondFlow_Issue
 import com.example.flow.ExampleFlow
 import com.example.flow.ExampleFlow.Initiator
 import com.example.schema.IOUSchemaV1
+import com.example.state.BlacklistState
 import com.example.state.BondState
 import com.example.state.IOUState
 import net.corda.core.contracts.Amount
+import net.corda.core.contracts.StateAndRef
 import net.corda.core.identity.CordaX500Name
+import net.corda.core.identity.Party
 import net.corda.core.messaging.CordaRPCOps
 import net.corda.core.messaging.startTrackedFlow
 import net.corda.core.messaging.vaultQueryBy
@@ -22,6 +25,7 @@ import net.corda.finance.contracts.asset.Cash
 import net.corda.finance.contracts.getCashBalances
 import net.corda.finance.flows.CashIssueFlow
 import org.slf4j.Logger
+import java.time.Instant
 import java.util.*
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
@@ -39,19 +43,78 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
     companion object {
         private val logger: Logger = loggerFor<ExampleApi>()
     }
-
-    /**
-     * Returns the node's name.
-     */
+    // --------------------------
+    // Node name
+    // --------------------------
     @GET
     @Path("me")
     @Produces(MediaType.APPLICATION_JSON)
-    fun whoami() = mapOf("me" to myLegalName)
+    fun me() = mapOf("me" to myLegalName)
 
-    /**
-     * Returns all parties registered with the [NetworkMapService]. These names can be used to look up identities
-     * using the [IdentityService].
-     */
+    // --------------------------
+    // Cash state
+    // --------------------------
+    object cashObj {
+        var quatity : Long = 0
+        var currency: String = "THB"
+    }
+    @GET
+    @Path("cashTHB")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun getCashTHB() : StateAndRef<Cash.State>{
+        var listCash = rpcOps.vaultQuery(Cash.State::class.java).states
+        var thbQuatity : Long = 0
+        var thbCurrency : String
+
+        for(stateRefCash in listCash){
+            if(stateRefCash.state.data.amount.token.toString() == "THB"){
+                thbQuatity = stateRefCash.state.data.amount.quantity
+                return stateRefCash
+            }
+        }
+
+        var cashObj1 : cashObj? = null
+        cashObj1?.quatity = thbQuatity
+        return listCash[0]
+    }
+
+    @GET
+    @Path("cash")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun getCash() = rpcOps.vaultQuery(Cash.State::class.java).states
+
+    @PUT
+    @Path("Issue_cash")
+    fun issueCash(@QueryParam("amount") amount: Int, @QueryParam("currency") currency: String): Response {
+
+        var amountCash = Amount<Currency>(amount.toLong(),Currency.getInstance(currency))
+//        var partyCash = Party()
+        return try {
+            val signedTx = rpcOps.startTrackedFlow(CashIssueFlow, amountCash, 0,).returnValue.getOrThrow()
+            Response.status(CREATED).entity("Transaction id ${signedTx.id} committed to ledger.\n").build()
+
+        } catch (ex: Throwable) {
+            logger.error(ex.message, ex)
+            Response.status(BAD_REQUEST).entity(ex.message!!).build()
+        }
+    }
+
+    // --------------------------
+    // All bond state
+    // --------------------------
+    @GET
+    @Path("bond")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun getBond() = rpcOps.vaultQueryBy<BondState>().states
+
+    // --------------------------
+    // All blacklist state
+    // --------------------------
+    @GET
+    @Path("blacklist")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun getBlacklist() = rpcOps.vaultQueryBy<BlacklistState>().states
+
     @GET
     @Path("peers")
     @Produces(MediaType.APPLICATION_JSON)
@@ -63,30 +126,12 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
                 .filter { it.organisation !in (SERVICE_NAMES + myLegalName.organisation) })
     }
 
-    /**
-     * Displays all IOU states that exist in the node's vault.
-     */
+
     @GET
     @Path("ious")
     @Produces(MediaType.APPLICATION_JSON)
     fun getIOUs() = rpcOps.vaultQueryBy<IOUState>().states
 
-    @GET
-    @Path("bond")
-    @Produces(MediaType.APPLICATION_JSON)
-    fun getBond() = rpcOps.vaultQueryBy<BondState>().states
-
-    /**
-     * Initiates a flow to agree an IOU between two parties.
-     *
-     * Once the flow finishes it will have written the IOU to ledger. Both the lender and the borrower will be able to
-     * see it when calling /api/example/ious on their respective nodes.
-     *
-     * This end-point takes a Party name parameter as part of the path. If the serving node can't find the other party
-     * in its network map cache, it will return an HTTP bad request.
-     *
-     * The flow is invoked asynchronously. It returns a future when the flow's call() method returns.
-     */
     @PUT
     @Path("create-iou")
     fun createIOU(@QueryParam("iouValue") iouValue: Int, @QueryParam("partyName") partyName: CordaX500Name?): Response {
@@ -109,17 +154,14 @@ class ExampleApi(private val rpcOps: CordaRPCOps) {
         }
     }
 
-    @GET
-    @Path("cash")
-    @Produces(MediaType.APPLICATION_JSON)
-    fun cash() = rpcOps.vaultQuery(Cash.State::class.java).states
+
 
     @GET
     @Path("cash-balances")
     @Produces(MediaType.APPLICATION_JSON)
     fun getCashBalances() = rpcOps.getCashBalances()
 
-    @GET
+    @PUT
     @Path("self-issue-cash")
     fun selfIssueCash(@QueryParam(value = "amount") amount: Int,
                       @QueryParam(value = "currency") currency: String): Response {
