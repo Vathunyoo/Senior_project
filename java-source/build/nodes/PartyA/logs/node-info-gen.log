@@ -1,12 +1,12 @@
 
 [91m   ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         [94mIt's kind of like a block chain but
-[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mcords sounded healthier than chains.
+ / /     __  / ___/ __  / __ `/         [94mIt's not who you know, it's who you know
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94mknows what you know you know.
 [91m\____/     /_/   \__,_/\__,_/[m
 
 [99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
 
 [m
 Logs can be found in                    : /Users/vathunyoo/Desktop/GitHub/Senior_project/java-source/build/nodes/PartyA/logs
-Database connection url is              : jdbc:h2:tcp://192.168.1.64:62172/node
+Database connection url is              : jdbc:h2:tcp://192.168.1.64:49163/node
